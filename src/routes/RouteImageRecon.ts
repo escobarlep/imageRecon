@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { ImageReconController } from '../controllers/ImageReconController'
 
-export default class Routes {
+export default class RouteImageRecon {
   private controller: ImageReconController
   
   constructor() {
