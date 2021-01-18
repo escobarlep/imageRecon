@@ -7,7 +7,7 @@ const vision = require('@google-cloud/vision')
 const request: OcrRequestBatch = {
   requests: [{
     image: { content: null },
-    features: [{ type: 'DOCUMENT_TEXT_DETECTION' }]
+    features: [{ type: 'TEXT_DETECTION' }]
   }]
 }
 
@@ -35,7 +35,7 @@ export class ImageReconService {
 
     const separatedFieds = []
     const separatedFiedsWithSpecialCharacters = []
-    result.forEach(field => {
+    result.forEach((field: any) => {
       let word = this.helper.isUnnecessaryCharacter(field.description) ? null : field.description
       if (word) {
         separatedFiedsWithSpecialCharacters.push(word)
