@@ -18,20 +18,20 @@ export default class Logger {
     return date.toLocaleDateString('pt-br', options)
   }
 
-  public log(message: string){
-    console.log(`${this.getDate()} ${this.title} ${message}`)
+  public log(...args: any[]){
+    console.log(`${this.getDate()} ${this.title}`, ...args)
   }
 
-  public info(message: string): void {
-    this.log(`${blue('[INFO]')} ${message}`)
+  public info(...args: any[]): void {
+    this.log(`${blue('[INFO]')}`, ...args)
   }
 
-  public warn(message: string): void {
-    this.log(`${yellow('[INFO]')} ${message}`)
+  public warn(...args: any[]): void {
+    this.log(`${yellow('[WARNING]')}`, ...args)
   }
 
-  public err(message: string): void {
-    this.log(`${red('[INFO]')} ${message}`)
+  public err(...args: any[]): void {
+    this.log(`${red('[ERROR]')}`, ...args)
   }
 
 }
